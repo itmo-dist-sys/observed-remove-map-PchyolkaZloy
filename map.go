@@ -151,8 +151,6 @@ func (n *CRDTMapNode) Receive(msg *hive.Message) error {
 	switch payload := msg.Payload.(type) {
 	case MapState:
 		n.Merge(payload)
-	case map[string]StateEntry:
-		n.Merge(payload)
 	}
 
 	return nil
